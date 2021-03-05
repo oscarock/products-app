@@ -15,9 +15,7 @@ class CreateBillsTable extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('product_id')->constrained('products');
-            $table->integer('amount');
-            $table->float('unit_value');
+            $table->foreignId('sale_id')->constrained('sales');
             $table->integer('iva');
             $table->float('sub_total');
             $table->float('total');
